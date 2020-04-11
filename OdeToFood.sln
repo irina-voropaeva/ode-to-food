@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdeFood.Web", "OdeFood.Web\OdeFood.Web.csproj", "{68AF6B41-43CE-42DD-813A-18CA804BEB2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdeToFood.Data", "OdeToFood.Data\OdeToFood.Data.csproj", "{E5BF7720-0AD4-4101-818A-32E2DA90CBB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68AF6B41-43CE-42DD-813A-18CA804BEB2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68AF6B41-43CE-42DD-813A-18CA804BEB2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68AF6B41-43CE-42DD-813A-18CA804BEB2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68AF6B41-43CE-42DD-813A-18CA804BEB2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5BF7720-0AD4-4101-818A-32E2DA90CBB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5BF7720-0AD4-4101-818A-32E2DA90CBB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5BF7720-0AD4-4101-818A-32E2DA90CBB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5BF7720-0AD4-4101-818A-32E2DA90CBB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB8F67CC-83F8-43DD-81EA-A9218A4C70F2}
+	EndGlobalSection
+EndGlobal
