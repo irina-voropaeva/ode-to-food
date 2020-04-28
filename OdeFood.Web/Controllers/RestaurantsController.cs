@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Protocols;
+using OdeToFood.Data.Models;
 using OdeToFood.Data.Services;
 
 namespace OdeFood.Web.Controllers
@@ -16,20 +19,53 @@ namespace OdeFood.Web.Controllers
         }
 
         // GET: Restaurants
+        [HttpGet]
         public ActionResult Index()
         {
             var model = db.GetAll();
             return View(model);
         }
 
+        [HttpGet]
         public ActionResult Details(int id)
+        {
+            var model = db.Get(id);
+            return model == null ? View("NotFound") : View(model);
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
         {
             var model = db.Get(id);
             if (model == null)
             {
-                return View("NotFound");
+                return HttpNotFound();
             }
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Restaurant restaurant)
+        {
+            if (!ModelState.IsValid) return View(restaurant);
+            db.Edit(restaurant);
+            return RedirectToAction("Details", restaurant);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Restaurant restaurant)
+        {
+            if (!ModelState.IsValid) return View(restaurant);
+            db.Add(restaurant);
+            return RedirectToAction("Details", restaurant);
         }
     }
 }

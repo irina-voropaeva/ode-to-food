@@ -28,5 +28,19 @@ namespace OdeToFood.Data.Services
         {
             return restaurants.FirstOrDefault(r => r.Id == id);
         }
+
+        public void Add(Restaurant restaurant)
+        {
+            restaurant.Id = restaurants.Max(r => r.Id) + 1;
+            restaurants.Add(restaurant);
+        }
+
+        public void Edit(Restaurant restaurant)
+        {
+            var existing = Get(restaurant.Id);
+            if (existing == null) return;
+            existing.Name = restaurant.Name;
+            existing.Cuisine = restaurant.Cuisine;
+        }
     }
 }
