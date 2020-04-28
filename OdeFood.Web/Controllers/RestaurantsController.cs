@@ -67,5 +67,7 @@ namespace OdeFood.Web.Controllers
             db.Add(restaurant);
             return RedirectToAction("Details", restaurant);
         }
+
+
     }
 }
